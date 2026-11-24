@@ -1,0 +1,4 @@
+const elemento = document.getElementById("mi-boton");
+if (elemento) {
+    // Tu lógica aquí de forma segura
+}

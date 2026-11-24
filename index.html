@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conciliación Bancaria y Ventas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1>Conciliador Financiero</h1>
+      <p>Carga y emparejamiento automático de movimientos bancarios y contables</p>
+    </header>
+
+    <main class="main-content">
+      <!-- Panel de carga de archivos / Datos simulados -->
+      <section class="upload-section card">
+        <h2>Fuentes de Datos</h2>
+        <div class="upload-grid">
+          <div class="drop-zone">
+            <h3>Estado de Cuenta Bancario</h3>
+            <p>Sube tu archivo o carga los datos de prueba</p>
+            <span class="file-status" id="bank-status">Pendiente</span>
+          </div>
+          <div class="drop-zone">
+            <h3>Reporte del Sistema (ERP/Ventas)</h3>
+            <p>Sube tu archivo o carga los datos de prueba</p>
+            <span class="file-status" id="system-status">Pendiente</span>
+          </div>
+        </div>
+        <button id="btn-process" class="btn btn-primary">Procesar y Conciliar Movimientos</button>
+      </section>
+
+      <!-- Resumen KPI -->
+      <section class="summary-section">
+        <div class="kpi-card kpi-matched">
+          <span class="kpi-title">Movimientos Emparejados</span>
+          <span class="kpi-value" id="count-matched">0</span>
+        </div>
+        <div class="kpi-card kpi-discrepancy">
+          <span class="kpi-title">Discrepancias / Pendientes</span>
+          <span class="kpi-value" id="count-discrepancies">0</span>
+        </div>
+        <div class="kpi-card kpi-total">
+          <span class="kpi-title">Total Procesados</span>
+          <span class="kpi-value" id="count-total">0</span>
+        </div>
+      </section>
+
+      <!-- Tabla de Resultados -->
+      <section class="results-section card">
+        <h2>Detalle de Conciliación</h2>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Estado</th>
+                <th>Fecha Banco</th>
+                <th>Ref. Banco</th>
+                <th>Monto Banco</th>
+                <th>Monto Sistema</th>
+                <th>Ref. Sistema</th>
+                <th>Fecha Sistema</th>
+                <th>Detalle / Discrepancia</th>
+              </tr>
+            </thead>
+            <tbody id="reconciliation-tbody">
+              <tr>
+                <td colspan="8" class="empty-state">Presiona "Procesar y Conciliar Movimientos" para iniciar la lectura.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
